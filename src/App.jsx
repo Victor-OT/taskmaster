@@ -17,8 +17,9 @@ function App() {
           {
             context.taskList?.map(task => (
               <TaskCard
-                key={uuidv4()} 
-                task={task.task}/>
+                key={uuidv4()}
+                task={task}
+                taskContent={task.task}/>
             ))
           }
         </div>
