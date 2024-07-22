@@ -1,0 +1,64 @@
+:root {
+    --grey-hover: #595959;
+    --grey-card-bg: #313131;
+    --grey-container-bg: #212121;
+    --grey-global-bg: #181818;
+  }
+
+.inactive-task-adder {
+    display: none;
+}
+
+.task-adder-container {
+    display: flex;
+    flex-direction: column;
+    width: 88%;
+    max-width: 500px;
+    height: 160px;
+    border-radius: 8px;
+    align-self: center;
+    background: var(--grey-hover);
+    position: absolute;
+    top: 170px;
+}
+
+.task-adder-container .close-adder {
+    width: 12px;
+    height: 12px;
+    align-self: last baseline;
+    margin: 8px;
+}
+
+.task-adder-input {
+    align-self: center;
+    width: 86%;
+    height: 34px;
+    padding-left: 6px;
+    background: var(--grey-card-bg);
+    border: none;
+    border-radius: 8px;
+    font: normal 300 12px 'Poppins', sans-serif;
+    color: white;
+}
+
+.task-adder-input::placeholder {
+    color: white;
+}
+
+.task-adder-input:focus {
+    outline: none;
+}
+
+.task-adder-container button {
+    width: 220px;
+    height: 40px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    align-self: center;
+    background: black;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+

@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { useContext } from 'react'
 import { TaskMasterContext } from './Context'
 import { TaskCard } from './Components/TaskCard'
+import { TaskAdder } from './Components/TaskAdder'
 import './App.css'
 
 function App() {
@@ -24,8 +25,10 @@ function App() {
           }
         </div>
         <div className='add-task-container'>
-          <button>Add Task</button>
+          <button
+          onClick={() => context.openTaskAdder()}>Add Task</button>
         </div>
+          <TaskAdder />
       </div>
   )
 }

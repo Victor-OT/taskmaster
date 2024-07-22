@@ -9,12 +9,21 @@ const TaskMasterContextProvider = ({children}) => {
         {task: 'Terminar diseño de TaskMaster'},
         {task: 'Hacer Ejercicio'},
       ]
-      const [taskList, setTaskList] = useState(tasks)
+
+    const [taskList, setTaskList] = useState(tasks)
+
+    const [taskAdderStatus, setTaskAdderStatus] = useState('inactive-task-adder')
+    const openTaskAdder = () => {setTaskAdderStatus('task-adder-container')}
+    const closeTaskAdder = () => {setTaskAdderStatus('inactive-task-adder')}
+
     return (
         <TaskMasterContext.Provider value={{
             tasks,
             taskList,
-            setTaskList
+            setTaskList,
+            taskAdderStatus,
+            openTaskAdder,
+            closeTaskAdder
         }}>
             {children}
         </TaskMasterContext.Provider>
