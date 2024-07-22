@@ -6,9 +6,13 @@ function TaskCard (task) {
     const context = useContext(TaskMasterContext)
     const [isTaskComplete, setIsTaskComplete] = useState(undefined)
 
-    const setTaskStatus = () => {
-        isTaskComplete === undefined ? setIsTaskComplete("completed-task")
-        : setIsTaskComplete(undefined)
+    const setTaskStatus = (task) => {
+        const indexCompleted = context.taskList.indexOf(task.task)
+        let updatedTasks = [...context.taskList]
+        const completedTask = {task: task.taskContent, completed: true}
+        updatedTasks[indexCompleted] = completedTask
+        context.setTaskList(updatedTasks)
+        console.log(context.taskList)
     }
 
     const deleteTask = (task) => {
@@ -18,7 +22,7 @@ function TaskCard (task) {
         context.setTaskList(updatedTasks)
     }
     return (
-        <div className={`task-card-container ${isTaskComplete}`}>
+        <div className={`task-card-container ${task.task.completed ? 'completed-task' : undefined}`}>
             <img 
                 className="close-icon"
                 src="/icon-close.svg" alt="close" 
@@ -27,7 +31,7 @@ function TaskCard (task) {
             <img
                 className="check-icon" 
                 src="/icon-check.svg" alt="check" 
-                onClick={() => setTaskStatus()}/>
+                onClick={() => setTaskStatus(task)}/>
         </div>
     )
 }
