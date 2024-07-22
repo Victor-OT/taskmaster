@@ -4,12 +4,15 @@ import './App.css'
 function App() {
 
   return (
-    <div>
+    <div className='global-app'>
       <header>
-        <img src="https://i.imgur.com/liVPOTk.png" alt="header-bg" />
-        <h1>TaskMaster</h1>
-        <h2>Organize tasks efficiently</h2>
-      </header>
+          <h1>TaskMaster</h1>
+          <h2>Organize tasks efficiently</h2>
+        </header>
+      <input type='text' name='text' className='search-bar' placeholder='Enter task name...'/>
+      <div className='tasks-container'>
+
+      </div>
     </div>
   )
 }
