@@ -1,0 +1,37 @@
+:root {
+    --grey-hover: #595959;
+    --grey-card-bg: #313131;
+    --grey-container-bg: #212121;
+    --grey-global-bg: #181818;
+  }
+
+.task-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
+    width: 94%;
+    height: 40px;
+    background: var(--grey-card-bg);
+    border-radius: 8px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.task-card-container .close-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 6px;
+}
+
+.task-card-container p {
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+}
+
+.task-card-container .check-icon {
+    width: 14px;
+    height: 12px;
+    margin-right: 6px;
+}

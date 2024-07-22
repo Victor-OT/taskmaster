@@ -62,11 +62,16 @@ header h2 {
 .tasks-container {
   width: 92%;
   max-width: 500px;
-  height: 250px;
+  height: auto;
+  max-height: 300px;
+  min-width: 250px;
   margin-top: 20px;
   border-radius: 8px;
   background-color: var(--grey-container-bg);
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
 }
 
 .add-task-container {
