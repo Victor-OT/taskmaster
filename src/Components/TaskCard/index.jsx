@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { TaskMasterContext } from '../../Context'
 import './TaskCard.css'
 
 function TaskCard (props) {
+    const context = useContext(TaskMasterContext)
     const [isTaskComplete, setIsTaskComplete] = useState(undefined)
 
     const setTaskStatus = () => {
