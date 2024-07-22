@@ -13,7 +13,7 @@ function App() {
           <h1>TaskMaster</h1>
           <h2>Organize tasks efficiently</h2>
         </header>
-        <input type='text' name='text' className='search-bar' placeholder='Enter task name...'/>
+        {/* <input type='text' name='text' className='search-bar' placeholder='Enter task name...'/> */}
         <div className='tasks-container'>
           {
             context.taskList?.map(task => (
