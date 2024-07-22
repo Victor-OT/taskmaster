@@ -17,6 +17,10 @@
     margin-top: 12px;
     margin-bottom: 12px;
 }
+
+.task-card-container:hover {
+    background: var(--grey-hover);
+}
 .completed-task {
     text-decoration: line-through;
     text-decoration-color: white;
@@ -27,14 +31,14 @@
     text-decoration: none;
 }
 
-.task-card-container:hover {
-    background: var(--grey-hover);
-}
-
 .task-card-container .close-icon {
     width: 14px;
     height: 14px;
     margin-left: 6px;
+}
+
+.close-icon:hover {
+    cursor: pointer;
 }
 
 .task-card-container p {
@@ -47,4 +51,9 @@
     width: 14px;
     height: 12px;
     margin-right: 6px;
+    z-index: 10;
+}
+
+.check-icon:hover {
+    cursor: pointer;
 }

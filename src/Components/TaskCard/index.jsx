@@ -2,10 +2,11 @@ import { useState } from 'react'
 import './TaskCard.css'
 
 function TaskCard (props) {
-    const [isTaskComplete, setIsTaskComplete] = useState("Incomplete-task")
+    const [isTaskComplete, setIsTaskComplete] = useState(undefined)
+
     const setTaskStatus = () => {
-        isTaskComplete === "incomplete-task" ? setIsTaskComplete("completed-task")
-        : setIsTaskComplete("incomplete-task")
+        isTaskComplete === undefined ? setIsTaskComplete("completed-task")
+        : setIsTaskComplete(undefined)
     }
 
     return (
