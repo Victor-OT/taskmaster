@@ -12,7 +12,6 @@ function TaskCard (task) {
         const completedTask = {task: task.taskContent, completed: true}
         updatedTasks[indexCompleted] = completedTask
         context.setTaskList(updatedTasks)
-        console.log(context.taskList)
     }
 
     const deleteTask = (task) => {
