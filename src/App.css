@@ -1,0 +1,19 @@
+:root {
+    --grey-hover: #595959;
+    --grey-card-bg: #313131;
+    --grey-container-bg: #212121;
+    --grey-global-bg: #181818;
+  }
+  
+  #root {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--montserrat);
+  }
+  
+  html {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
