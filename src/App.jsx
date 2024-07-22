@@ -13,6 +13,9 @@ function App() {
       <div className='tasks-container'>
 
       </div>
+      <div className='add-task-container'>
+        <button>Add Task</button>
+      </div>
     </div>
   )
 }
