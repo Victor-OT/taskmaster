@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid'
 import { useContext, useState } from 'react'
 import { TaskMasterContext } from './Context'
 import { TaskCard } from './Components/TaskCard'
@@ -21,7 +20,7 @@ function App() {
           {
             context.taskList?.filter(task => task.task.toLowerCase().includes(searchInput.toLocaleLowerCase())).map(task => (
               <TaskCard
-                key={uuidv4()}
+                key={task.id}
                 task={task}
                 taskContent={task.task}/>
             ))

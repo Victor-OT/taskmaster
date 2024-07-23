@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 import { useContext, useState } from 'react'
 import { TaskMasterContext } from '../../Context'
 import './TaskAdder.css'
@@ -12,7 +13,7 @@ function TaskAdder () {
     }
 
     const createTask = (textInput) => {
-        const newTask = {task: textInput, completed: false}
+        const newTask = {id: uuidv4(), task: textInput, completed: false}
         context.setTaskList([...context.taskList, newTask])
         context.closeTaskAdder()
         setTextInput('')

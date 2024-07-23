@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 import { useState, createContext } from "react";
 
 const TaskMasterContext = createContext()
@@ -5,9 +6,9 @@ const TaskMasterContext = createContext()
 const TaskMasterContextProvider = ({children}) => {
     //Task List to Show
     const tasks = [
-        {task: 'Hacer la tarea', completed: false},
-        {task: 'Estudiar para mi examen', completed: true},
-        {task: 'Terminar diseño de TaskMaster', completed: false}
+        {id: uuidv4(), task: 'Hacer la tarea', completed: false},
+        {id: uuidv4(), task: 'Estudiar para mi examen', completed: true},
+        {id: uuidv4(), task: 'Terminar diseño de TaskMaster', completed: false}
       ]
 
     const [taskList, setTaskList] = useState(tasks)
