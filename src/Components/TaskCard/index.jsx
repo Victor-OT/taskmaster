@@ -4,7 +4,6 @@ import './TaskCard.css'
 
 function TaskCard (task) {
     const context = useContext(TaskMasterContext)
-    const [isTaskComplete, setIsTaskComplete] = useState(undefined)
 
     const setTaskStatus = (task) => {
         const indexCompleted = context.taskList.indexOf(task.task)

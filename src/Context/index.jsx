@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect, useRef } from "react";
 
 const TaskMasterContext = createContext()
 
@@ -11,7 +11,30 @@ const TaskMasterContextProvider = ({children}) => {
         {id: uuidv4(), task: 'Terminar diseño de TaskMaster', completed: false}
       ]
 
-    const [taskList, setTaskList] = useState(tasks)
+    const [taskList, setTaskList] = useState([])
+
+    //Data Persistence
+    const taskListRef = useRef(taskList)
+    useEffect(() => {
+        taskListRef.current = taskList
+    }, [taskList])
+
+    useEffect(() => {
+        const parsedTaskList = JSON.parse(localStorage.getItem('taskInfo'))
+        if (parsedTaskList && parsedTaskList.length > 0) {
+            setTaskList(parsedTaskList)
+        } else {
+            setTaskList(tasks)
+        }
+    }, [])
+
+    useEffect (() => {
+        localStorage.setItem('taskInfo', JSON.stringify(taskListRef.current))
+    }, [taskListRef.current])
+
+    console.log(localStorage.getItem('taskInfo'))
+    /* console.log(taskList)
+    console.log(taskListRef) */
 
     //Open -Close Task Adder
     const [taskAdderStatus, setTaskAdderStatus] = useState('inactive-task-adder')
